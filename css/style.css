@@ -213,7 +213,7 @@ button {
     color: #114c7d;
     font-weight: 400;
     font-size: 28px;
-    background-image: url('../images/fevicon.png');
+    background-image: url('../images/Portadadisco.jpg');
     background-repeat: no-repeat;
     padding-left: 55px;
     letter-spacing: -0.5px;
@@ -1405,6 +1405,10 @@ ul.icon_hu li {
 .footer {
     background: #161616;
     margin-top: 90px;
+    padding-bottom: 50px;
+}
+.footer2 {
+    background: black;
     padding-bottom: 50px;
 }
 .news h3 {
