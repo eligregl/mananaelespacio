@@ -1,0 +1,404 @@
+/* COMPONENTS.CSS - Estilos de componentes específicos */
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-bottom: 6rem;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.6;
+}
+
+.hero-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, 
+        rgba(26, 44, 91, 0.3) 0%,
+        rgba(45, 21, 68, 0.5) 50%,
+        rgba(107, 45, 143, 0.3) 100%
+    );
+    z-index: 1;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 2rem;
+    width: 100%;
+}
+
+.band-name {
+    font-size: clamp(2.5rem, 8vw, 7rem);
+    font-weight: 700;
+    letter-spacing: 0.8rem;
+    margin-bottom: 3rem;
+    line-height: 1.2;
+}
+
+/* ==================== REPRODUCTOR VINTAGE ==================== */
+.player-container {
+    background: linear-gradient(135deg, rgba(26, 44, 91, 0.95), rgba(45, 21, 68, 0.95));
+    border: 4px solid var(--bright-pink);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    max-width: 450px;
+    margin: 0 auto 4rem;
+    box-shadow: 
+        0 4px 0 rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+/* Scanlines vintage */
+.player-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.15) 3px
+    );
+    pointer-events: none;
+    border-radius: 4px;
+}
+
+.track-display {
+    background: rgba(0, 0, 0, 0.5);
+    padding: 0.6rem 0.8rem;
+    border-radius: 4px;
+    margin-bottom: 0.8rem;
+    border: 2px solid rgba(255, 105, 180, 0.4);
+    position: relative;
+    z-index: 1;
+}
+
+.track-title {
+    font-size: 0.85rem;
+    color: var(--soft-pink);
+    font-family: 'Courier New', monospace;
+    text-align: center;
+    letter-spacing: 0.05rem;
+    text-transform: uppercase;
+}
+
+.player-controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 0.8rem;
+    position: relative;
+    z-index: 1;
+}
+
+.control-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 4px;
+    background: linear-gradient(180deg, rgba(107, 45, 143, 0.6), rgba(107, 45, 143, 0.4));
+    border: 2px solid var(--lavender);
+    color: var(--lavender);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.9rem;
+    box-shadow: 
+        0 3px 0 rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.control-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--bright-pink);
+    color: var(--bright-pink);
+    box-shadow: 
+        0 5px 0 rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.control-btn:active {
+    transform: translateY(1px);
+    box-shadow: 
+        0 2px 0 rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.play-btn {
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(180deg, var(--bright-pink), #d91c7a);
+    border: 2px solid var(--lavender);
+    color: #000;
+    font-size: 1.1rem;
+    box-shadow: 
+        0 4px 0 rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.play-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 
+        0 6px 0 rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.play-btn:active {
+    transform: translateY(2px);
+    box-shadow: 
+        0 2px 0 rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.3),
+        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.progress-container {
+    position: relative;
+    z-index: 1;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 6px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 2px;
+    overflow: hidden;
+    border: 2px solid rgba(255, 105, 180, 0.4);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    cursor: pointer;
+}
+
+.progress-fill {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--bright-pink), var(--lavender));
+    position: relative;
+    transition: width 0.1s linear;
+}
+
+.progress-fill::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--white);
+}
+
+/* ==================== VINTAGE CARDS ==================== */
+.vintage-card {
+    background: linear-gradient(135deg, rgba(26, 44, 91, 0.6), rgba(45, 21, 68, 0.6));
+    border: 4px solid var(--bright-pink);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 
+        0 4px 0 rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+    position: relative;
+    margin-bottom: 2rem;
+}
+
+.vintage-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.1) 0px,
+        transparent 1px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.1) 3px
+    );
+    pointer-events: none;
+    border-radius: 4px;
+}
+
+.vintage-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 
+        0 7px 0 rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1),
+        inset 0 -2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* ==================== ALBUM COVER ==================== */
+.album-cover {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 4px;
+    margin-bottom: 1.5rem;
+    border: 3px solid var(--lavender);
+    box-shadow: 
+        0 3px 0 rgba(0, 0, 0, 0.4),
+        inset 0 2px 0 rgba(255, 255, 255, 0.1);
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.album-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==================== BOTONES VINTAGE ==================== */
+.btn-vintage {
+    color: #000;
+    text-decoration: none;
+    padding: 0.7rem 1.5rem;
+    background: linear-gradient(180deg, var(--bright-pink), #d91c7a);
+    border: 2px solid var(--lavender);
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 3px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    font-family: 'Courier New', monospace;
+    display: inline-block;
+    transition: all 0.2s ease;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.05rem;
+}
+
+.btn-vintage:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-vintage:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.3);
+}
+
+.btn-vintage-purple {
+    background: linear-gradient(180deg, var(--lavender), #9370db);
+}
+
+.btn-vintage-pink {
+    background: linear-gradient(180deg, var(--soft-pink), #ff9ec8);
+}
+
+/* ==================== FORMULARIO ==================== */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+    z-index: 1;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.5);
+    border: 3px solid rgba(255, 105, 180, 0.5);
+    border-radius: 4px;
+    color: var(--white);
+    font-family: 'Courier New', monospace;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.5);
+    font-size: 0.9rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: rgba(255, 255, 255, 0.4);
+}
+
+input:focus, 
+textarea:focus {
+    outline: none;
+    border-color: var(--bright-pink);
+    background: rgba(0, 0, 0, 0.6);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-success {
+    background: linear-gradient(135deg, rgba(26, 44, 91, 0.8), rgba(45, 21, 68, 0.8));
+    border: 3px solid var(--lavender);
+    border-radius: 8px;
+    padding: 2rem;
+    text-align: center;
+    color: var(--soft-pink);
+    font-family: 'Courier New', monospace;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .band-name {
+        letter-spacing: 0.4rem;
+        font-size: clamp(2rem, 10vw, 4rem);
+    }
+    
+    .player-container {
+        max-width: 90%;
+        padding: 0.8rem 1rem;
+    }
+    
+    .control-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 0.8rem;
+    }
+    
+    .play-btn {
+        width: 45px;
+        height: 45px;
+        font-size: 1rem;
+    }
+    
+    .vintage-card {
+        padding: 1.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .band-name {
+        letter-spacing: 0.2rem;
+    }
+    
+    .hero {
+        padding-bottom: 4rem;
+    }
+    
+    .player-controls {
+        gap: 0.6rem;
+    }
+}

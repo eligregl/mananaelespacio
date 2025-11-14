@@ -1,0 +1,211 @@
+/* CONTACTO.CSS - Estética Web 90s Real */
+
+/* ==================== WRAPPER ==================== */
+.contact-90s-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ==================== INTRO ==================== */
+.contact-intro {
+    background: linear-gradient(135deg, rgba(26, 44, 91, 0.8), rgba(107, 45, 143, 0.8));
+    border: 2px solid var(--bright-pink);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-intro p {
+    font-size: 1.1rem;
+    color: var(--white);
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+.contact-intro p:last-child {
+    margin-bottom: 0;
+    color: var(--soft-pink);
+}
+
+/* ==================== FORMULARIO ==================== */
+.contact-form-90s {
+    background: linear-gradient(135deg, rgba(26, 44, 91, 0.6), rgba(45, 21, 68, 0.6));
+    border: 2px solid var(--lavender);
+    padding: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.form-field {
+    margin-bottom: 1.5rem;
+}
+
+.form-field label {
+    display: block;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: var(--bright-pink);
+    margin-bottom: 0.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.contact-form-90s input,
+.contact-form-90s textarea {
+    width: 100%;
+    padding: 0.8rem;
+    background: rgba(0, 0, 0, 0.6);
+    border: 2px solid var(--lavender);
+    color: var(--white);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.contact-form-90s input:focus,
+.contact-form-90s textarea:focus {
+    outline: none;
+    border-color: var(--bright-pink);
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.contact-form-90s textarea {
+    resize: vertical;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ==================== BOTÓN ==================== */
+.btn-submit-90s {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: var(--bright-pink);
+    border: 2px solid var(--lavender);
+    color: #000;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.15rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-submit-90s:hover {
+    background: var(--soft-pink);
+    transform: translateY(-2px);
+}
+
+.btn-submit-90s:active {
+    transform: translateY(0);
+}
+
+/* ==================== INFO BOXES ==================== */
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.info-box {
+    background: rgba(45, 21, 68, 0.6);
+    border: 2px solid var(--lavender);
+    padding: 1.5rem;
+}
+
+.info-box h3 {
+    font-size: 1.1rem;
+    color: var(--bright-pink);
+    margin-bottom: 0.8rem;
+}
+
+.info-box p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 0;
+}
+
+/* ==================== SUCCESS MESSAGE ==================== */
+.form-success-90s {
+    background: linear-gradient(135deg, rgba(26, 44, 91, 0.8), rgba(107, 45, 143, 0.8));
+    border: 2px solid var(--bright-pink);
+    padding: 3rem;
+    text-align: center;
+}
+
+.form-success-90s h3 {
+    font-family: 'Courier New', monospace;
+    color: var(--bright-pink);
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2rem;
+}
+
+.form-success-90s p {
+    color: var(--white);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .contact-intro,
+    .contact-form-90s,
+    .info-box {
+        padding: 1.5rem;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .btn-submit-90s {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-intro,
+    .contact-form-90s,
+    .info-box {
+        padding: 1.2rem;
+    }
+    
+    .contact-intro p {
+        font-size: 1rem;
+    }
+    
+    .form-field label {
+        font-size: 0.85rem;
+    }
+    
+    .contact-form-90s input,
+    .contact-form-90s textarea {
+        padding: 0.7rem;
+        font-size: 0.95rem;
+    }
+    
+    .btn-submit-90s {
+        padding: 0.9rem 1.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .info-box h3 {
+        font-size: 1rem;
+    }
+    
+    .info-box p {
+        font-size: 0.9rem;
+    }
+}

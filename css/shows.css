@@ -1,0 +1,422 @@
+/* ===== SHOWS PAGE - ESTÉTICA 90s ===== */
+
+#shows {
+    padding-top: 8rem;
+    min-height: 100vh;
+}
+
+/* ===== PRÓXIMO SHOW - BANNER DESTACADO ===== */
+.next-show-banner {
+    background: linear-gradient(135deg, 
+        var(--bright-pink) 0%, 
+        var(--lavender) 50%, 
+        var(--royal-purple) 100%
+    );
+    border: none;
+    border-radius: 0;
+    padding: 3rem 2rem;
+    margin: 0 auto 4rem;
+    max-width: 900px;
+    box-shadow: 
+        8px 8px 0 rgba(0, 0, 0, 0.4),
+        inset 0 0 0 3px rgba(255, 255, 255, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto de scanlines 90s */
+.next-show-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        0deg,
+        rgba(0, 0, 0, 0.15) 0px,
+        transparent 1px,
+        transparent 3px,
+        rgba(0, 0, 0, 0.15) 4px
+    );
+    pointer-events: none;
+}
+
+.next-show-banner h3 {
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    letter-spacing: 0.3rem;
+    color: #000;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 900;
+    text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
+}
+
+.next-show-content {
+    position: relative;
+    z-index: 1;
+}
+
+.show-title {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 900;
+    text-align: center;
+    color: #000;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    text-shadow: 
+        3px 3px 0 rgba(255, 255, 255, 0.3),
+        -1px -1px 0 rgba(0, 0, 0, 0.2);
+    line-height: 1;
+}
+
+.show-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.show-info {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 1rem 2rem;
+    border: 3px solid #000;
+    font-family: 'Courier New', monospace;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.show-date {
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+}
+
+.show-venue {
+    font-size: 1.2rem;
+}
+
+.show-address {
+    font-size: 0.95rem;
+    opacity: 0.9;
+}
+
+.show-city {
+    font-size: 1rem;
+}
+
+.ticket-info {
+    text-align: center;
+}
+
+.ticket-badge {
+    display: inline-block;
+    background: #000;
+    color: var(--bright-pink);
+    padding: 1rem 2.5rem;
+    border: 4px solid var(--bright-pink);
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    margin-bottom: 1rem;
+    box-shadow: 
+        6px 6px 0 rgba(0, 0, 0, 0.3),
+        inset 0 0 20px rgba(255, 105, 180, 0.3);
+    transform: rotate(-2deg);
+}
+
+.btn-tickets {
+    display: inline-block;
+    background: #fff;
+    color: #000;
+    padding: 1rem 3rem;
+    border: 4px solid #000;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    font-weight: 900;
+    letter-spacing: 0.15rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+    transition: all 0.2s ease;
+}
+
+.btn-tickets:hover {
+    transform: translate(2px, 2px);
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+}
+
+.btn-tickets:active {
+    transform: translate(4px, 4px);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.4);
+}
+
+/* ===== SHOWS PASADOS ===== */
+.past-shows-section {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.past-shows-title {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+    letter-spacing: 0.3rem;
+    margin-bottom: 3rem;
+    text-align: center;
+    font-family: 'Courier New', monospace;
+    color: var(--lavender);
+    text-transform: uppercase;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.3);
+}
+
+.past-shows-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Card de show pasado */
+.past-show-card {
+    background: linear-gradient(135deg, 
+        rgba(26, 44, 91, 0.8), 
+        rgba(45, 21, 68, 0.8)
+    );
+    border: none;
+    box-shadow: 
+        8px 8px 0 rgba(0, 0, 0, 0.4),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Efecto retro texture */
+.past-show-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.02) 2px,
+        rgba(255, 255, 255, 0.02) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.show-card-header {
+    background: var(--bright-pink);
+    padding: 1.5rem;
+    text-align: center;
+    border-bottom: 4px solid #000;
+    position: relative;
+    z-index: 1;
+}
+
+.show-card-date {
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: #000;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+}
+
+.show-card-venue {
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.8);
+    font-weight: bold;
+}
+
+/* ===== CAROUSEL ===== */
+.show-carousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 4/3;
+    overflow: hidden;
+    background: #000;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.4s ease-in-out;
+    height: 100%;
+}
+
+.carousel-slide {
+    min-width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.1) saturate(1.2);
+}
+
+/* Botones de navegación */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 105, 180, 0.9);
+    border: none;
+    color: #000;
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+    font-weight: 900;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Courier New', monospace;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.carousel-btn:hover {
+    background: var(--bright-pink);
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.carousel-btn:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-btn-prev {
+    left: 1rem;
+}
+
+.carousel-btn-next {
+    right: 1rem;
+}
+
+/* Indicadores de posición */
+.carousel-indicators {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 10;
+}
+
+.carousel-indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.3);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+    background: rgba(255, 105, 180, 0.9);
+    transform: scale(1.2);
+}
+
+.carousel-indicator:hover {
+    background: rgba(255, 105, 180, 0.6);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .next-show-banner {
+        padding: 2rem 1.5rem;
+        border-width: 4px;
+        margin-bottom: 3rem;
+    }
+    
+    .show-title {
+        font-size: 2rem;
+        letter-spacing: 0.1rem;
+    }
+    
+    .show-info {
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .show-date {
+        font-size: 1.2rem;
+    }
+    
+    .ticket-badge {
+        font-size: 1rem;
+        padding: 0.8rem 2rem;
+    }
+    
+    .btn-tickets {
+        padding: 0.8rem 2rem;
+        font-size: 0.9rem;
+    }
+    
+    .past-shows-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .past-shows-title {
+        font-size: 1.8rem;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    
+    .carousel-btn-prev {
+        left: 0.5rem;
+    }
+    
+    .carousel-btn-next {
+        right: 0.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .next-show-banner {
+        border-width: 3px;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    }
+    
+    .show-title {
+        font-size: 1.5rem;
+    }
+    
+    .past-show-card {
+        border-width: 3px;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    }
+    
+    .past-shows-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .carousel-btn {
+        width: 35px;
+        height: 35px;
+        font-size: 1rem;
+    }
+}

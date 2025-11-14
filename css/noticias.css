@@ -1,0 +1,260 @@
+/* ===== NOTICIAS PAGE - ESTÉTICA 90s ===== */
+
+#noticias {
+    padding-top: 8rem;
+    min-height: 100vh;
+}
+
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* ===== NEWS CARD ===== */
+.news-card {
+    background: linear-gradient(135deg, 
+        rgba(26, 44, 91, 0.7), 
+        rgba(45, 21, 68, 0.7)
+    );
+    border: none;
+    margin-bottom: 3rem;
+    box-shadow: 
+        8px 8px 0 rgba(0, 0, 0, 0.4),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Textura retro */
+.news-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 2px,
+        rgba(255, 255, 255, 0.02) 2px,
+        rgba(255, 255, 255, 0.02) 4px
+    );
+    pointer-events: none;
+    z-index: 0;
+}
+
+.news-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 
+        12px 12px 0 rgba(0, 0, 0, 0.4),
+        inset 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+/* Borde lateral de color según tipo */
+.news-card.review::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--lavender);
+    z-index: 1;
+}
+
+.news-card.release::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 6px;
+    height: 100%;
+    background: var(--bright-pink);
+    z-index: 1;
+}
+
+/* ===== IMAGEN DE LA NOTICIA ===== */
+.news-image {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+}
+
+.news-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    filter: contrast(1.1) saturate(1.2);
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image img {
+    transform: scale(1.05);
+}
+
+/* ===== CONTENIDO DE LA NOTICIA ===== */
+.news-content {
+    padding: 2.5rem;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.news-header {
+    margin-bottom: 1.5rem;
+}
+
+.news-meta {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.news-type {
+    font-family: 'Courier New', monospace;
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 0.15rem;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.news-type.review {
+    background: var(--lavender);
+    color: #000;
+}
+
+.news-type.release {
+    background: var(--bright-pink);
+    color: #000;
+}
+
+.news-date {
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    color: rgba(255, 255, 255, 0.6);
+    letter-spacing: 0.1rem;
+}
+
+.news-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+.news-excerpt {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1.5rem;
+}
+
+.news-link {
+    display: inline-block;
+    background: transparent;
+    color: var(--lavender);
+    padding: 0.8rem 1.8rem;
+    border: 3px solid var(--lavender);
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    font-weight: 900;
+    letter-spacing: 0.1rem;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+    box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.3);
+    align-self: flex-start;
+}
+
+.news-link:hover {
+    background: var(--lavender);
+    color: #000;
+    transform: translate(-2px, -2px);
+    box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.news-link:active {
+    transform: translate(0, 0);
+    box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* Variante para release */
+.news-card.release .news-link {
+    border-color: var(--bright-pink);
+    color: var(--bright-pink);
+}
+
+.news-card.release .news-link:hover {
+    background: var(--bright-pink);
+    color: #000;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 968px) {
+    .news-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .news-image {
+        height: 300px;
+    }
+    
+    .news-content {
+        padding: 2rem;
+    }
+    
+    .news-title {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .news-container {
+        padding: 1rem;
+    }
+    
+    .news-card {
+        margin-bottom: 2rem;
+        box-shadow: 4px 4px 0 rgba(0, 0, 0, 0.4);
+    }
+    
+    .news-card:hover {
+        box-shadow: 6px 6px 0 rgba(0, 0, 0, 0.4);
+    }
+    
+    .news-image {
+        height: 250px;
+    }
+    
+    .news-content {
+        padding: 1.5rem;
+    }
+    
+    .news-title {
+        font-size: 1.2rem;
+    }
+    
+    .news-excerpt {
+        font-size: 0.95rem;
+    }
+    
+    .news-link {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.8rem;
+    }
+}

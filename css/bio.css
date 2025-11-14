@@ -1,0 +1,488 @@
+/* ===== BIO PAGE STYLES ===== */
+
+/* Bio Container */
+.bio-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 3rem 2rem 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+/* ===== POLAROIDS SECTION ===== */
+.polaroids-section {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem 0;
+    align-items: flex-start;
+}
+
+.polaroid {
+    background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+    padding: 1rem;
+    padding-bottom: 3rem;
+    box-shadow: 
+        0 2px 4px rgba(0, 0, 0, 0.1),
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        0 16px 32px rgba(0, 0, 0, 0.15);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    max-width: 280px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Textura sutil tipo papel fotográfico */
+.polaroid::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px),
+        repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,0.02) 2px, rgba(0,0,0,0.02) 4px);
+    pointer-events: none;
+    opacity: 0.3;
+}
+
+.polaroid:hover {
+    z-index: 10;
+    box-shadow: 
+        0 4px 8px rgba(0, 0, 0, 0.15),
+        0 16px 32px rgba(0, 0, 0, 0.3),
+        0 24px 48px rgba(0, 0, 0, 0.25);
+}
+
+/* Distribución escalonada con diferentes profundidades */
+.polaroid:nth-child(1) {
+    transform: rotate(-5deg);
+    margin-left: 0;
+    z-index: 3;
+}
+
+.polaroid:nth-child(1):hover {
+    transform: rotate(-3deg) scale(1.08) translateY(-8px);
+}
+
+.polaroid:nth-child(2) {
+    transform: rotate(3deg);
+    margin-left: 4rem;
+    margin-top: -1rem;
+    z-index: 2;
+}
+
+.polaroid:nth-child(2):hover {
+    transform: rotate(2deg) scale(1.08) translateY(-8px);
+}
+
+.polaroid:nth-child(3) {
+    transform: rotate(-2deg);
+    margin-left: 2rem;
+    margin-top: -1.5rem;
+    z-index: 1;
+}
+
+.polaroid:nth-child(3):hover {
+    transform: rotate(-1deg) scale(1.08) translateY(-8px);
+}
+
+.polaroid-image {
+    width: 100%;
+    aspect-ratio: 1;
+    overflow: hidden;
+    background: #ddd;
+}
+
+.polaroid-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.polaroid-caption {
+    margin-top: 0.8rem;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #333;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+/* ===== BIO TEXT ===== */
+.bio-text {
+    padding: 2rem 0;
+}
+
+.bio-text p {
+    line-height: 1.8;
+    font-size: 1.05rem;
+    color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 1.5rem;
+    text-align: justify;
+}
+
+.bio-text p:last-child {
+    margin-bottom: 0;
+}
+
+/* ===== MÚSICA SECTION ===== */
+#musica {
+    padding: 3rem 2rem 5rem;
+    background: linear-gradient(180deg, 
+        rgba(10, 10, 20, 0) 0%,
+        rgba(10, 10, 20, 0.3) 15%,
+        rgba(20, 15, 35, 0.6) 50%,
+        rgba(20, 15, 35, 0.8) 100%
+    );
+    margin-top: -2rem;
+}
+
+.vinyl-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/* ===== VINYL PLAYER ===== */
+.vinyl-player {
+    position: relative;
+    display: inline-block;
+    margin-bottom: 2rem;
+}
+
+/* Vinyl Record */
+.vinyl-record {
+    width: 320px;
+    height: 320px;
+    background: radial-gradient(circle at 30% 30%, #2a2a2a 0%, #0a0a0a 100%);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.8);
+    animation: spin 3s linear infinite;
+    animation-play-state: paused;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.vinyl-record:hover {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Vinyl grooves effect */
+.vinyl-grooves {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: repeating-radial-gradient(
+        circle at center,
+        transparent 0px,
+        transparent 2px,
+        rgba(255, 255, 255, 0.02) 2px,
+        rgba(255, 255, 255, 0.02) 4px
+    );
+    pointer-events: none;
+}
+
+/* Center label with album art */
+.vinyl-label {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #1a1a1a;
+    box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.8);
+}
+
+.vinyl-label img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Album Sleeve */
+.album-sleeve {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 320px;
+    height: 320px;
+    background: #1a1a1a;
+    border: 2px solid #333;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.6);
+    z-index: -1;
+}
+
+.album-sleeve img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Platform buttons */
+.platform-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-platform {
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-platform.spotify {
+    background: #ff1493;
+    color: #fff;
+    border: 2px solid #ff1493;
+}
+
+.btn-platform.spotify:hover {
+    background: transparent;
+    color: #ff1493;
+}
+
+.btn-platform.bandcamp {
+    background: transparent;
+    color: #7b68ee;
+    border: 2px solid #7b68ee;
+}
+
+.btn-platform.bandcamp:hover {
+    background: #7b68ee;
+    color: #fff;
+}
+
+.btn-platform.youtube {
+    background: transparent;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.btn-platform.youtube:hover {
+    background: #ff1493;
+    color: #fff;
+}
+
+/* Album Info */
+.album-info {
+    margin-bottom: 2rem;
+}
+
+.album-info h3 {
+    font-size: 1.8rem;
+    color: #ff1493;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.album-info .year {
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+/* Platform buttons */
+.platform-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.btn-platform {
+    padding: 0.6rem 1.5rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: 'Courier New', monospace;
+}
+
+.btn-platform.spotify {
+    background: #ff1493;
+    color: #fff;
+    border: 2px solid #ff1493;
+}
+
+.btn-platform.spotify:hover {
+    background: transparent;
+    color: #ff1493;
+}
+
+.btn-platform.bandcamp {
+    background: transparent;
+    color: #7b68ee;
+    border: 2px solid #7b68ee;
+}
+
+.btn-platform.bandcamp:hover {
+    background: #7b68ee;
+    color: #fff;
+}
+
+.btn-platform.youtube {
+    background: transparent;
+    color: #ff1493;
+    border: 2px solid #ff1493;
+}
+
+.btn-platform.youtube:hover {
+    background: #ff1493;
+    color: #fff;
+}
+
+.next-release {
+    margin-top: 2rem;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.5);
+    font-style: italic;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 968px) {
+    .bio-container {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+    
+    /* En tablets, las polaroids se organizan en dos filas */
+    .polaroids-section {
+        flex-direction: row;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 2rem;
+    }
+    
+    .polaroid {
+        margin: 0 !important;
+    }
+    
+    .polaroid:nth-child(1) {
+        transform: rotate(-4deg);
+    }
+    
+    .polaroid:nth-child(1):hover {
+        transform: rotate(-2deg) scale(1.08) translateY(-8px);
+    }
+    
+    .polaroid:nth-child(2) {
+        transform: rotate(2deg);
+        margin-top: 1rem !important;
+    }
+    
+    .polaroid:nth-child(2):hover {
+        transform: rotate(1deg) scale(1.08) translateY(-8px);
+    }
+    
+    .polaroid:nth-child(3) {
+        transform: rotate(-3deg);
+    }
+    
+    .polaroid:nth-child(3):hover {
+        transform: rotate(-1.5deg) scale(1.08) translateY(-8px);
+    }
+    
+    .album-sleeve {
+        position: static;
+        transform: none;
+        margin: 2rem auto 0;
+        max-width: 280px;
+    }
+}
+
+@media (max-width: 640px) {
+    /* En móviles, stack vertical pero mantienen rotaciones sutiles */
+    .polaroids-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1rem;
+    }
+    
+    .polaroid {
+        max-width: 260px;
+    }
+    
+    .polaroid:nth-child(1) {
+        transform: rotate(-3deg);
+    }
+    
+    .polaroid:nth-child(1):hover {
+        transform: rotate(-1.5deg) scale(1.05) translateY(-5px);
+    }
+    
+    .polaroid:nth-child(2) {
+        transform: rotate(2deg);
+        margin-top: -0.5rem !important;
+    }
+    
+    .polaroid:nth-child(2):hover {
+        transform: rotate(1deg) scale(1.05) translateY(-5px);
+    }
+    
+    .polaroid:nth-child(3) {
+        transform: rotate(-2deg);
+        margin-top: -0.5rem !important;
+    }
+    
+    .polaroid:nth-child(3):hover {
+        transform: rotate(-1deg) scale(1.05) translateY(-5px);
+    }
+    
+    .vinyl-record {
+        width: 260px;
+        height: 260px;
+    }
+    
+    .vinyl-label {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .album-sleeve {
+        max-width: 260px;
+    }
+    
+    .platform-buttons {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+    
+    .btn-platform {
+        width: 100%;
+        max-width: 300px;
+    }
+}
