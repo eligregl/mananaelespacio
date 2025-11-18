@@ -18,7 +18,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center 35%;
     z-index: 1;
 }
 
@@ -52,10 +52,12 @@
 .band-name {
     font-size: clamp(2rem, 4.5vw, 5rem);
     font-weight: 700;
-    letter-spacing: 0.5rem;
+    letter-spacing: 0.8rem;
+    word-spacing: 3rem;
     text-align: center;
     line-height: 1;
     white-space: nowrap;
+    margin-top: 3rem;
 }
 
 /* ==================== REPRODUCTOR COMO BARRA ==================== */
@@ -394,7 +396,9 @@ textarea {
     
     .band-name {
         font-size: clamp(1.1rem, 4vw, 2.2rem);
-        letter-spacing: 0.25rem;
+        letter-spacing: 0.4rem;
+        word-spacing: 2rem;
+        margin-top: 2rem;
     }
     
     .player-container {
@@ -440,7 +444,9 @@ textarea {
     
     .band-name {
         font-size: clamp(0.9rem, 4.5vw, 1.8rem);
-        letter-spacing: 0.15rem;
+        letter-spacing: 0.25rem;
+        word-spacing: 1.2rem;
+        margin-top: 1.5rem;
     }
     
     .player-container {

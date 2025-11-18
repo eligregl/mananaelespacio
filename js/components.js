@@ -28,46 +28,8 @@ class AudioPlayer {
         // Event listeners del audio
         this.audio.addEventListener('timeupdate', () => this.updateProgress());
         this.audio.addEventListener('ended', () => this.next());
-        this.audio.addEventListener('loadedmetadata', () => {
-            // Intenta autoplay
-            this.attemptAutoplay();
-        });
         
-        // Intenta autoplay con la primera interacción del usuario
-        this.setupAutoplayOnInteraction();
-    }
-    
-    attemptAutoplay() {
-        const playPromise = this.audio.play();
-        
-        if (playPromise !== undefined) {
-            playPromise.then(() => {
-                this.isPlaying = true;
-                this.playBtn.textContent = '⏸';
-            }).catch(error => {
-                // Autoplay bloqueado, esperamos interacción
-                console.log('Autoplay bloqueado. Esperando interacción del usuario...');
-                this.isPlaying = false;
-                this.playBtn.textContent = '▶';
-            });
-        }
-    }
-    
-    setupAutoplayOnInteraction() {
-        const startPlayback = () => {
-            if (!this.isPlaying && this.audio.paused) {
-                this.play();
-            }
-            // Remover listener después de la primera interacción
-            document.removeEventListener('click', startPlayback);
-            document.removeEventListener('touchstart', startPlayback);
-            document.removeEventListener('keydown', startPlayback);
-        };
-        
-        // Escuchar cualquier interacción
-        document.addEventListener('click', startPlayback, { once: true });
-        document.addEventListener('touchstart', startPlayback, { once: true });
-        document.addEventListener('keydown', startPlayback, { once: true });
+        // NO hay autoplay - el usuario debe dar play manualmente
     }
     
     loadTrack(index) {

@@ -26,21 +26,18 @@
                     <div class="polaroid-image">
                         <img src="assets/images/DSC_5619.JPG" alt="Mañana El Espacio">
                     </div>
-                    <div class="polaroid-caption">en vivo</div>
                 </div>
                 
                 <div class="polaroid">
                     <div class="polaroid-image">
                         <img src="assets/images/4FEC040C-5E44-4F63-9751-5DAE495E9EE7_4_5005_c.jpeg" alt="Mañana El Espacio">
                     </div>
-                    <div class="polaroid-caption">Hangueando</div>
                 </div>
                 
                 <div class="polaroid">
                     <div class="polaroid-image">
                         <img src="assets/images/DSC_2453.NEF.jpg" alt="Mañana El Espacio">
                     </div>
-                    <div class="polaroid-caption">soundcheck</div>
                 </div>
             </div>
 
@@ -71,8 +68,6 @@
             
             <!-- Album info (cargado dinámicamente) -->
             <div class="album-info" id="album-info"></div>
-            
-            <p class="next-release">Próximo disco en camino...</p>
         </div>
     </section>
 
@@ -110,6 +105,9 @@
                     <p class="year">${album.year}</p>
                     <div class="platform-buttons">
                         <a href="https://${album.links.spotify}" target="_blank" class="btn-platform spotify">SPOTIFY</a>
+                        <a href="https://${album.links.appleMusic}" target="_blank" class="btn-platform apple">APPLE MUSIC</a>
+                        <a href="https://${album.links.tidal}" target="_blank" class="btn-platform tidal">TIDAL</a>
+                        <a href="https://${album.links.youtubeMusic}" target="_blank" class="btn-platform youtube-music">YOUTUBE MUSIC</a>
                         <a href="https://${album.links.bandcamp}" target="_blank" class="btn-platform bandcamp">BANDCAMP</a>
                         <a href="https://${album.links.youtube}" target="_blank" class="btn-platform youtube">YOUTUBE</a>
                     </div>

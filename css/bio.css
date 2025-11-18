@@ -24,7 +24,7 @@
 .polaroid {
     background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
     padding: 1rem;
-    padding-bottom: 3rem;
+    padding-bottom: 1rem;
     box-shadow: 
         0 2px 4px rgba(0, 0, 0, 0.1),
         0 8px 16px rgba(0, 0, 0, 0.2),
@@ -240,33 +240,35 @@
 
 /* Platform buttons */
 .platform-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.8rem;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .btn-platform {
-    padding: 0.6rem 1.5rem;
+    padding: 0.6rem 1rem;
     text-decoration: none;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 600;
     border-radius: 4px;
     transition: all 0.3s ease;
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-family: 'Courier New', monospace;
+    text-align: center;
 }
 
 .btn-platform.spotify {
-    background: #ff1493;
+    background: #ff69b4;
     color: #fff;
-    border: 2px solid #ff1493;
+    border: 2px solid #ff69b4;
 }
 
 .btn-platform.spotify:hover {
     background: transparent;
-    color: #ff1493;
+    color: #ff69b4;
 }
 
 .btn-platform.bandcamp {
@@ -282,13 +284,46 @@
 
 .btn-platform.youtube {
     background: transparent;
-    color: #ff1493;
-    border: 2px solid #ff1493;
+    color: #ff69b4;
+    border: 2px solid #ff69b4;
 }
 
 .btn-platform.youtube:hover {
-    background: #ff1493;
+    background: #ff69b4;
     color: #fff;
+}
+
+.btn-platform.apple {
+    background: transparent;
+    color: #ffb6d9;
+    border: 2px solid #ffb6d9;
+}
+
+.btn-platform.apple:hover {
+    background: #ffb6d9;
+    color: #000;
+}
+
+.btn-platform.tidal {
+    background: transparent;
+    color: #b794f6;
+    border: 2px solid #b794f6;
+}
+
+.btn-platform.tidal:hover {
+    background: #b794f6;
+    color: #000;
+}
+
+.btn-platform.youtube-music {
+    background: #6b2d8f;
+    color: #fff;
+    border: 2px solid #6b2d8f;
+}
+
+.btn-platform.youtube-music:hover {
+    background: transparent;
+    color: #6b2d8f;
 }
 
 /* Album Info */
@@ -308,59 +343,6 @@
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.5);
     margin-bottom: 1.5rem;
-}
-
-/* Platform buttons */
-.platform-buttons {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    flex-wrap: wrap;
-}
-
-.btn-platform {
-    padding: 0.6rem 1.5rem;
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 600;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-family: 'Courier New', monospace;
-}
-
-.btn-platform.spotify {
-    background: #ff1493;
-    color: #fff;
-    border: 2px solid #ff1493;
-}
-
-.btn-platform.spotify:hover {
-    background: transparent;
-    color: #ff1493;
-}
-
-.btn-platform.bandcamp {
-    background: transparent;
-    color: #7b68ee;
-    border: 2px solid #7b68ee;
-}
-
-.btn-platform.bandcamp:hover {
-    background: #7b68ee;
-    color: #fff;
-}
-
-.btn-platform.youtube {
-    background: transparent;
-    color: #ff1493;
-    border: 2px solid #ff1493;
-}
-
-.btn-platform.youtube:hover {
-    background: #ff1493;
-    color: #fff;
 }
 
 .next-release {
@@ -477,12 +459,12 @@
     }
     
     .platform-buttons {
-        flex-direction: column;
+        grid-template-columns: 1fr;
         gap: 0.8rem;
+        max-width: 300px;
     }
     
     .btn-platform {
-        width: 100%;
-        max-width: 300px;
+        font-size: 0.8rem;
     }
 }

@@ -78,7 +78,10 @@ const siteData = {
             links: {
                 spotify: "open.spotify.com/intl-es/artist/37hKyWHoSR14jr6RqGEbhi?si=0c1UFux8Ta2CjTXDUAhOzg&nd=1",
                 bandcamp: "mananaelespacio.bandcamp.com/",
-                youtube: "youtube.com/@mananaelespacio"
+                youtube: "youtube.com/@mananaelespacio",
+                tidal: "tidal.com/artist/29206585",
+                appleMusic: "music.apple.com/us/artist/ma%C3%B1ana-el-espacio/1594070037",
+                youtubeMusic: "music.youtube.com/channel/UCoaYYVzEp2QtmDm4AAzF-Mw"
             }
         }
         // Agrega más discos aquí cuando salgan
