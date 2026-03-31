@@ -18,6 +18,8 @@ class AudioPlayer {
         this.prevBtn = document.querySelector('.prev-btn');
         this.nextBtn = document.querySelector('.next-btn');
         this.trackTitle = document.querySelector('.track-title');
+        this.trackAlbum = document.querySelector('.track-album');
+        this.trackYear = document.querySelector('.track-year');
         this.progressBar = document.querySelector('.progress-bar');
         this.progressFill = document.querySelector('.progress-fill');
     }
@@ -36,6 +38,16 @@ class AudioPlayer {
         const track = this.tracks[index];
         this.audio.src = track.file;
         this.trackTitle.textContent = track.title;
+        
+        // Actualizar nombre del disco y año desde siteData
+        if (this.trackAlbum) {
+            this.trackAlbum.textContent = siteData.music.currentAlbum;
+        }
+        if (this.trackYear) {
+            const currentAlbum = siteData.discography.find(album => album.title === siteData.music.currentAlbum);
+            this.trackYear.textContent = currentAlbum ? currentAlbum.year : '';
+        }
+        
         this.currentTrackIndex = index;
     }
     

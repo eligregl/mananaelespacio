@@ -4,11 +4,11 @@ function renderNav() {
     if (!nav) return;
     
     const navItems = [
-        { href: '/', text: 'Inicio' },
-        { href: '/bio', text: 'Bio' },
-        { href: '/noticias', text: 'Noticias' },
-        { href: '/shows', text: 'Shows' },
-        { href: '/contacto', text: 'Contacto' }
+        { href: '/index.html', text: 'Inicio' },
+        { href: '/bio.html', text: 'Bio' },
+        { href: '/noticias.html', text: 'Noticias' },
+        { href: '/shows.html', text: 'Shows' },
+        { href: '/contacto.html', text: 'Contacto' }
     ];
     
     const navHTML = navItems.map(item => 

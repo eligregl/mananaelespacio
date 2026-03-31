@@ -1,5 +1,3 @@
-/* COMPONENTS.CSS - Estilos de componentes específicos */
-
 /* ==================== HERO SECTION ==================== */
 .hero {
     position: relative;
@@ -58,178 +56,6 @@
     line-height: 1;
     white-space: nowrap;
     margin-top: 3rem;
-}
-
-/* ==================== REPRODUCTOR COMO BARRA ==================== */
-.player-container {
-    background: linear-gradient(
-        to top,
-        rgba(10, 10, 10, 0.98) 0%,
-        rgba(26, 44, 91, 0.92) 40%,
-        rgba(45, 21, 68, 0.85) 100%
-    );
-    backdrop-filter: blur(12px);
-    padding: 0.4rem 0.8rem;
-    max-width: fit-content;
-    margin: 0 auto;
-    border-radius: 6px;
-    box-shadow: 
-        0 -3px 15px rgba(255, 105, 180, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 0.6rem;
-    justify-content: center;
-    flex-wrap: nowrap;
-}
-
-/* Scanlines vintage */
-.player-container::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: repeating-linear-gradient(
-        0deg,
-        rgba(0, 0, 0, 0.08) 0px,
-        transparent 1px,
-        transparent 2px,
-        rgba(0, 0, 0, 0.08) 3px
-    );
-    pointer-events: none;
-}
-
-.track-display {
-    background: rgba(0, 0, 0, 0.5);
-    padding: 0.25rem 0.6rem;
-    border-radius: 3px;
-    border: 2px solid rgba(255, 105, 180, 0.4);
-    position: relative;
-    z-index: 1;
-    min-width: 130px;
-    flex-shrink: 0;
-}
-
-.track-title {
-    font-size: 0.75rem;
-    color: var(--soft-pink);
-    font-family: 'Courier New', monospace;
-    text-align: center;
-    letter-spacing: 0.05rem;
-    text-transform: uppercase;
-}
-
-.player-controls {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0.4rem;
-    position: relative;
-    z-index: 1;
-    flex-shrink: 0;
-}
-
-.control-btn {
-    width: 28px;
-    height: 28px;
-    border-radius: 3px;
-    background: linear-gradient(180deg, rgba(107, 45, 143, 0.6), rgba(107, 45, 143, 0.4));
-    border: 2px solid var(--lavender);
-    color: var(--lavender);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    font-size: 0.65rem;
-    box-shadow: 
-        0 2px 0 rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.control-btn:hover {
-    transform: translateY(-2px);
-    border-color: var(--bright-pink);
-    color: var(--bright-pink);
-    box-shadow: 
-        0 4px 0 rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.control-btn:active {
-    transform: translateY(1px);
-    box-shadow: 
-        0 1px 0 rgba(0, 0, 0, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-}
-
-.play-btn {
-    width: 36px;
-    height: 36px;
-    background: linear-gradient(180deg, var(--bright-pink), #d91c7a);
-    border: 2px solid var(--lavender);
-    color: #000;
-    font-size: 0.85rem;
-    box-shadow: 
-        0 3px 0 rgba(0, 0, 0, 0.4),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.play-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 
-        0 5px 0 rgba(0, 0, 0, 0.4),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.play-btn:active {
-    transform: translateY(1px);
-    box-shadow: 
-        0 2px 0 rgba(0, 0, 0, 0.4),
-        inset 0 2px 0 rgba(255, 255, 255, 0.3),
-        inset 0 -2px 4px rgba(0, 0, 0, 0.2);
-}
-
-.progress-container {
-    position: relative;
-    z-index: 1;
-    flex: 1;
-    min-width: 100px;
-    max-width: 200px;
-}
-
-.progress-bar {
-    width: 100%;
-    height: 4px;
-    background: rgba(0, 0, 0, 0.6);
-    border-radius: 2px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 105, 180, 0.3);
-    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.5);
-    cursor: pointer;
-}
-
-.progress-fill {
-    width: 0%;
-    height: 100%;
-    background: linear-gradient(90deg, var(--bright-pink), var(--lavender));
-    position: relative;
-    transition: width 0.1s linear;
-}
-
-.progress-fill::after {
-    content: '';
-    position: absolute;
-    right: 0;
-    top: 0;
-    width: 2px;
-    height: 100%;
-    background: var(--white);
 }
 
 /* ==================== VINTAGE CARDS ==================== */
@@ -382,13 +208,6 @@ textarea {
 }
 
 /* ==================== RESPONSIVE ==================== */
-@media (max-width: 1024px) {
-    .player-container {
-        gap: 0.5rem;
-        padding: 0.4rem 0.5rem;
-    }
-}
-
 @media (max-width: 768px) {
     .hero-content {
         padding: 6rem 1.5rem 0;
@@ -399,37 +218,6 @@ textarea {
         letter-spacing: 0.4rem;
         word-spacing: 2rem;
         margin-top: 2rem;
-    }
-    
-    .player-container {
-        gap: 0.5rem;
-        padding: 0.4rem 0.5rem;
-        flex-direction: row;
-    }
-    
-    .track-display {
-        min-width: 110px;
-        padding: 0.25rem 0.5rem;
-    }
-    
-    .track-title {
-        font-size: 0.65rem;
-    }
-    
-    .control-btn {
-        width: 26px;
-        height: 26px;
-        font-size: 0.6rem;
-    }
-    
-    .play-btn {
-        width: 34px;
-        height: 34px;
-        font-size: 0.8rem;
-    }
-    
-    .progress-container {
-        max-width: 150px;
     }
     
     .vintage-card {
@@ -447,29 +235,5 @@ textarea {
         letter-spacing: 0.25rem;
         word-spacing: 1.2rem;
         margin-top: 1.5rem;
-    }
-    
-    .player-container {
-        padding: 0.35rem 0.4rem;
-        gap: 0.4rem;
-    }
-    
-    .player-controls {
-        gap: 0.3rem;
-    }
-    
-    .track-display {
-        min-width: 90px;
-        font-size: 0.6rem;
-    }
-    
-    .control-btn {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .play-btn {
-        width: 32px;
-        height: 32px;
     }
 }

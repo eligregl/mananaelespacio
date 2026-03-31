@@ -35,15 +35,10 @@ const siteData = {
     bio: {
         title: "Bio",
         content: `
-            <p>Mañana El Espacio es una banda musical originaria de Venezuela que ha logrado destacarse en la escena independiente gracias a su talento y habilidad para fusionar diferentes géneros y crear un sonido auténtico y distintivo. Su música es una mezcla de indie pop, dream pop y garage indiepop, con un toque latino que le da a su música un sabor original y especial.
-            </p><p>
-            Aunque su álbum debut fue grabado en casa, la calidad de su producción es excepcional gracias a la habilidad del líder de la banda, Ricardo, para utilizar diferentes capas de instrumentos y efectos en las guitarras. El resultado es una mezcla de sonidos interesantes, que logran crear una atmósfera única en cada una de sus canciones.
-            </p><p>
-            El sello discográfico Jigsaw Records, conocido por descubrir y promover nuevas bandas independientes, se fijó en Mañana El Espacio como uno de sus más recientes descubrimientos. Su música, aunque no se ajusta a la típica música jangle-pop de América Latina, logra capturar la atención de los amantes de la música indie gracias a su sonido jangly-twee pop y la voz suave y demure en español que le da un toque de autenticidad a su música.
-            </p><p>
-            Su sonido es una mezcla de influencias que van desde bandas como The Field Mice, Pains of Being Pure at Heart y Catwalk, pero logran crear su propia identidad musical con su sonido original.
-            </p><p>
-            Su sonido auténtico y distintivo, su estética única y su habilidad para crear atmósferas interesantes en sus canciones, hacen que sean una banda prometedora en la escena independiente.</p>
+            <p>Mañana El Espacio es un grupo de indiepop radicado en Medellín desde 2022, con origen en Caracas, Venezuela.</p>
+            <p>En 2022, salió a la luz su disco debut <em>Casi Nada Es Para Siempre</em>, editado en físico y en plataformas digitales por el sello estadounidense Jigsaw Records.</p>
+            <p>Ese mismo año, el grupo es preseleccionado para participar en el Festival Contempopránea en España; y se traslada de Venezuela a Colombia, donde se ha presentado en Medellín y Bogotá.</p>
+            <p>En 2026 lanzaron el sencillo "Cuidado Perro Triste", en colaboración con el artista urbano del mismo nombre, quien hizo la portada del sencillo. Este tema fue grabado en Echoes Sounds en Medellín y mezclado por Eva María López del grupo español Linda Guilala en Vigo, España.</p>
         `
     },
 
@@ -52,9 +47,9 @@ const siteData = {
         {
             date: "27 JUL 2022",
             type: "review",
-            title: '"Un gran descubrimiento" - Cloudberry Cake',
+            title: '"Un gran descubrimiento" - Cloudberry Records',
             excerpt: '"Un álbum soberbio y una gran sorpresa, por supuesto, ya que proviene de un país que normalmente no produce bandas de indiepop."',
-            link: "https://cloudberrycake.blogspot.com/2022/07/gargoyles.html",
+            link: "https://www.cloudberryrecords.com/blog/?p=12944",
             linkText: "LEER COMPLETA",
             image: "assets/images/cloudberry-review.png"
         },
@@ -63,9 +58,18 @@ const siteData = {
             type: "review",
             title: '"Jangly twee-pop given extra bite" - Janglepophub',
             excerpt: '"Un sonido dominante de riffs jangly entrelazados con tempos twee-pop. Es jangly twee-pop al que se le da suficiente mordida extra para llevarlo a otro lugar."',
-            link: "https://janglepophub.com/album-review-casi-nada-es-para-siempre-by-manana-el-espacio-2022-jigsaw-records/",
+            link: "https://janglepophub.home.blog/2022/07/20/album-review-casi-nada-es-para-siempre-by-manana-el-espacio-2022-jigsaw-records/",
             linkText: "LEER COMPLETA",
             image: "assets/images/janglepophub-review.png"
+        },
+        {
+            date: "2022",
+            type: "review",
+            title: '"South American Jangle Pop" - Zero Vu',
+            excerpt: '"Ever wondered what Sonic Youth would sound like if they played jangle pop and sang in Spanish? Wonder no more."',
+            link: "https://zerovu.blog/south-american-jangle-pop-a-brief-introduction/",
+            linkText: "LEER COMPLETA",
+            image: "assets/images/cloudberry-review.png"
         }
     ],
 
@@ -73,7 +77,7 @@ const siteData = {
     discography: [
         {
             title: "Casi Nada Es Para Siempre",
-            year: "2021",
+            year: "2022",
             cover: "assets/images/Portadadisco.jpg",
             links: {
                 spotify: "open.spotify.com/intl-es/artist/37hKyWHoSR14jr6RqGEbhi?si=0c1UFux8Ta2CjTXDUAhOzg&nd=1",
@@ -89,16 +93,19 @@ const siteData = {
 
     // Shows
     shows: {
-        upcoming: {
-            date: "15 NOV 2024",
-            time: "6:30 PM",
-            venue: "Santo & Seña",
-            address: "Carrera 4 No. 54A-10",
-            city: "Bogotá, Colombia",
-            ticketLink: "https://casasantoysena.com/producto/concierto-manana-el-espacio/",
-            ticketText: "ENTRADA LIBRE"
-        },
+        upcoming: null,
         past: [
+            {
+                date: "31 OCT 2025",
+                time: "",
+                venue: "Rock Y Ciencia - Universidad EAFIT",
+                city: "Medellín",
+                photos: [
+                    "assets/images/E.jpg",
+                    "assets/images/DSC_0344.jpg",
+                    "assets/images/DSC_0349.jpg"
+                ]
+            },
             {
                 date: "25 OCT 2025",
                 time: "8:00 PM",
@@ -106,30 +113,16 @@ const siteData = {
                 city: "Envigado",
                 photos: [
                     "assets/images/20251025_205551.jpg",
-                    "assets/images/20251025_204850.jpg",
                     "assets/images/20251025_223012.jpg"
                 ]
             },
             {
-                date: "06 DIC 2024",
-                time: "9:00 PM",
-                venue: "Bacalao Beer Project",
-                city: "Envigado",
+                date: "01 FEB 2024",
+                time: "",
+                venue: "La Pared",
+                city: "Caracas, Venezuela",
                 photos: [
-                    "assets/images/20250516-000016690019.jpg",
-                    "assets/images/20250516-000016690023.jpg",
-                    "assets/images/20250516-000016690024.jpg"
-                ]
-            },
-            {
-                date: "19 OCT 2024",
-                time: "8:00 PM",
-                venue: "Bacalao Beer Project",
-                city: "Envigado",
-                photos: [
-                    "assets/images/DSCN0945.JPG",
-                    "assets/images/DSCN0956.JPG",
-                    "assets/images/DSCN0978.JPG"
+                    "assets/images/D.jpg"
                 ]
             }
         ]

@@ -66,11 +66,7 @@ const App = {
                     <a href="${album.links.youtube}" class="btn-vintage btn-vintage-pink" target="_blank" rel="noopener">YOUTUBE</a>
                 </div>
             </div>
-            ${siteData.discography.length === 1 ? `
-                <div style="margin-top: 3rem; text-align: center; color: var(--lavender); font-style: italic;">
-                    Próximo disco en camino...
-                </div>
-            ` : ''}
+            ${siteData.discography.length === 1 ? `` : ''}
         `).join('');
         
         discoContainer.innerHTML = discoHTML;
@@ -80,26 +76,37 @@ const App = {
     renderShows() {
         // Próximo show
         const nextShowContainer = document.getElementById('next-show');
-        if (nextShowContainer && siteData.shows.upcoming) {
-            const show = siteData.shows.upcoming;
-            nextShowContainer.innerHTML = `
-                <h3>★ PRÓXIMO SHOW ★</h3>
-                <div class="next-show-content">
-                    <div class="show-title">MAÑANA EL ESPACIO</div>
-                    <div class="show-details">
-                        <div class="show-info show-date">${show.date} • ${show.time}</div>
-                        <div class="show-info show-venue">${show.venue}</div>
-                        <div class="show-info show-address">${show.address}</div>
-                        <div class="show-info show-city">${show.city}</div>
+        if (nextShowContainer) {
+            if (siteData.shows.upcoming) {
+                const show = siteData.shows.upcoming;
+                nextShowContainer.innerHTML = `
+                    <h3>★ PRÓXIMO SHOW ★</h3>
+                    <div class="next-show-content">
+                        <div class="show-title">MAÑANA EL ESPACIO</div>
+                        <div class="show-details">
+                            <div class="show-info show-date">${show.date} • ${show.time}</div>
+                            <div class="show-info show-venue">${show.venue}</div>
+                            <div class="show-info show-address">${show.address}</div>
+                            <div class="show-info show-city">${show.city}</div>
+                        </div>
+                        <div class="ticket-info">
+                            <div class="ticket-badge">${show.ticketText}</div>
+                            <a href="${show.ticketLink}" class="btn-tickets" target="_blank" rel="noopener">
+                                MÁS INFO →
+                            </a>
+                        </div>
                     </div>
-                    <div class="ticket-info">
-                        <div class="ticket-badge">${show.ticketText}</div>
-                        <a href="${show.ticketLink}" class="btn-tickets" target="_blank" rel="noopener">
-                            MÁS INFO →
-                        </a>
+                `;
+            } else {
+                nextShowContainer.innerHTML = `
+                    <div class="next-show-content">
+                        <div class="show-title">PRÓXIMAMENTE</div>
+                        <div class="show-details">
+                            <div class="show-info">Nuevas fechas en camino...</div>
+                        </div>
                     </div>
-                </div>
-            `;
+                `;
+            }
         }
         
         // Shows pasados
